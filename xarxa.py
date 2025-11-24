@@ -11,13 +11,7 @@ EXCHANGES = {
     "Kraken": ["3KUhH7Mg7Uq4Gr3yXSCPSnP8bvt6Zux6p7", "1BoatSLRHtKNngkdXEeobR76b53LETtpyT"],
     "Poloniex": [
         "17A16QmavnUfCW11DAApiJxp7ARnxN5pGX"   # Poloniex dirección según la lista :contentReference[oaicite:9]{index=9}  
-    ],    
-    "Bitstamp": [
-        "3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v"   # Bitstamp cold wallet :contentReference[oaicite:5]{index=5}  
-    ],
-    "Huobi": [
-        "3Cbq7aT1tY8kMxWLbitaG7yT6bPbKChq64"   # Huobi-wallet según gist :contentReference[oaicite:4]{index=4}  
-    ],
+    ]
 }
 
 # ======================================================
