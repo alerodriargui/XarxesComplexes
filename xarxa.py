@@ -184,6 +184,25 @@ out_exchanges_names = [G_filtered.nodes[v]['label'] for v in out_neighbors if G_
 print("Entradas desde exchanges:", in_exchanges_names)
 print("Salidas hacia exchanges:", out_exchanges_names)
 
+
+# Degree centrality
+degree_centrality = nx.degree_centrality(G_filtered)
+
+# Betweenness centrality
+betweenness_centrality = nx.betweenness_centrality(G_filtered)
+
+# Nodo Binance más representativo (primera wallet)
+binance_node = EXCHANGES["Binance"][0]
+bridge_node = top_bridge
+
+print(f"=== Centralidad Binance ({binance_node}) ===")
+print(f"Degree centrality: {degree_centrality[binance_node]:.4f}")
+print(f"Betweenness centrality: {betweenness_centrality[binance_node]:.4f}")
+
+print(f"\n=== Centralidad Nodo Puente ({bridge_node}) ===")
+print(f"Degree centrality: {degree_centrality[bridge_node]:.4f}")
+print(f"Betweenness centrality: {betweenness_centrality[bridge_node]:.4f}")
+
 # ======================================================
 # 8. Representación gráfica
 # ======================================================
@@ -207,7 +226,7 @@ nx.draw_networkx_edges(G_filtered, pos, alpha=0.2)
 
 # Labels solo para exchanges
 labels = {n: G_filtered.nodes[n].get('label', '') for n in G_filtered.nodes() if G_filtered.nodes[n].get('label', '') != ''}
-nx.draw_networkx_labels(G_filtered, pos, labels, font_size=12, font_color='red')
+nx.draw_networkx_labels(G_filtered, pos, labels, font_size=12, font_color='black')
 
 plt.title("Red BTC: Exchanges (rojo), Puente principal (naranja), Usuarios (azul)")
 plt.axis('off')
